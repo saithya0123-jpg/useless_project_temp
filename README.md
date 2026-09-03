@@ -22,8 +22,7 @@ This is a static website—there are no dependencies to install.
 Camera permission requires a secure context, so serve the project locally instead of opening `index.html` directly.
 
 ```powershell
-cd "C:\Users\Admin\OneDrive\Desktop\project 1\useless_project_temp"
-python -m http.server 8000
+https://saithya0123-jpg.github.io/useless_project_temp/
 ```
 
 Then visitfile:///C:/Users/Admin/OneDrive/Desktop/project%201/useless_project_temp/index.html in a current desktop or mobile browser. Choose **Start Camera**, grant permission, point it at the surface of a drink, then choose **Scan / Count Bubbles**.
