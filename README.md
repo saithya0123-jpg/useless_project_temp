@@ -1,103 +1,59 @@
-<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
+# Tea Bubble Counter ☕🫧
 
+> A gloriously over-engineered computer-vision experiment for answering the question nobody asked: **how many bubbles are on my tea?**
 
+Tea Bubble Counter opens your camera, looks for bright, circle-ish regions on a drink's surface, and turns the result into a completely unnecessary bubble score. It is intentionally playful—not laboratory equipment, a beverage-quality tester, or actual artificial intelligence.
 
-# [Project Name] 🎯
+## Features
 
+- Live browser camera preview via `getUserMedia`
+- Client-side Canvas image processing; no images or camera frames leave the browser
+- Light-region / local-peak bubble approximation with non-maximum suppression
+- Green numbered markers aligned over detected candidates
+- Tea and coffee modes, scan activity verdicts, and animated result count
+- Local scan archive with totals, averages, and maximum bubble count
+- Premium warm, responsive UI with camera errors and scanning feedback
+- No framework, build step, backend, or paid API
 
-## Basic Details
-### Team Name: [Name]
+## Run it
 
+This is a static website—there are no dependencies to install.
 
-### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+Camera permission requires a secure context, so serve the project locally instead of opening `index.html` directly.
 
-### Project Description
-[2-3 lines about what your project does]
+```powershell
+cd "C:\Users\Admin\OneDrive\Desktop\project 1\useless_project_temp"
+python -m http.server 8000
+```
 
-### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Then visit [http://localhost:8000](http://localhost:8000) in a current desktop or mobile browser. Choose **Start Camera**, grant permission, point it at the surface of a drink, then choose **Scan / Count Bubbles**.
 
-### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+If Python is unavailable, use any static-file server that serves this folder on `localhost`. For a deployed copy, use HTTPS; browsers block camera access on ordinary HTTP pages other than localhost.
 
-## Technical Details
-### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+## How the dubious science works
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+1. The current video frame is downscaled to keep scanning quick on mobile devices.
+2. Each pixel is converted to luminance, and a dynamic brightness threshold is calculated from that frame.
+3. Bright local maxima become bubble candidates.
+4. Nearby candidates are merged (non-maximum suppression), then the strongest 55 are shown.
+5. The overlay maps source coordinates using the same `object-fit: cover` crop as the video, so its markers remain visually aligned.
 
-### Implementation
-For Software:
-# Installation
-[commands]
+Glossy reflections, foam, overhead lights, and a very enthusiastic spoon can all count as bubbles. That is part of the product's charm.
 
-# Run
-[commands]
+## Project structure
 
-### Project Documentation
-For Software:
+```text
+index.html  Page structure, scanner controls, results, and archive
+style.css   Responsive warm/glassmorphism visual system and animations
+script.js   Camera lifecycle, Canvas detection, overlay, and local history
+```
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+## Privacy and storage
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Camera access is requested only when **Start Camera** is pressed. Frames are processed in the current browser tab and are never uploaded. Scan results (drink type, count, score, and timestamp) are saved only in that browser's `localStorage`; **Clear history** removes them.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+## Limitations
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+This is a light-hearted visual approximation, so results vary with lighting, drink colour, camera focus, cup shape, and whether the universe wants to be counted today. Use it for bragging rights, not beverage science.
 
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
----
-Made with ❤️ at TinkerHub Useless Projects 
-
-![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
-![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
-
-
-
+Made for TinkerHub Useless Projects—the technology is real; the purpose is delightfully not.

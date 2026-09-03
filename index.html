@@ -1,1 +1,23 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea Bubble Counter — Pointless Computer Vision</title>
+  <meta name="description" content="A gloriously over-engineered camera tool for counting bubbles in tea and coffee.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div><div class="orb orb-one"></div><div class="orb orb-two"></div>
+  <header><a class="brand" href="#top" aria-label="Tea Bubble Counter home"><span aria-hidden="true">☕</span><div>Tea Bubble Counter<small>Because counting tea bubbles is apparently important.</small></div></a><span class="badge">● EXPERIMENTAL VISION</span></header>
+  <main id="top">
+    <section class="hero"><div><p class="eyebrow">UNNECESSARY INTELLIGENCE, BREWED FRESH</p><h1>How Bubbly<br>Is Your Tea?</h1><p>We point a camera at a beverage, count a few suspicious circles, and call it innovation.</p><a href="#scanner">Begin the questionable science ↓</a></div><div class="cup-art"><i></i><i></i><i></i><div class="cup"><div class="tea"><b></b><b></b><b></b></div></div><div class="saucer"></div></div></section>
+    <section class="scanner" id="scanner"><article class="camera-card"><div class="card-head"><div><p class="eyebrow">01 / LIVE INPUT</p><h2>Bubble Scanner</h2></div><span id="cameraState" aria-live="polite">CAMERA IDLE</span></div><div class="drink-select" aria-label="Choose drink type"><button class="selected" data-drink="tea" aria-pressed="true">🍵 Tea</button><button data-drink="coffee" aria-pressed="false">☕ Coffee</button><small>What marvel are we examining?</small></div><div class="viewer" id="viewer"><video id="video" autoplay playsinline muted aria-label="Live camera preview"></video><canvas id="overlay" aria-hidden="true"></canvas><div class="viewer-empty" id="viewerEmpty"><span aria-hidden="true">◌</span><b>Camera is taking a tea break</b><small>Start it, then aim at the drink surface.</small></div><div class="scan-line" id="scanLine"></div></div><p class="error" id="error" role="alert"></p><div class="controls"><button class="button primary" id="startCamera">Start Camera</button><button class="button ghost" id="stopCamera" disabled>Stop Camera</button><button class="button dark" id="scanButton" disabled>🫧 Scan / Count Bubbles</button></div><p class="fineprint">Entertainment-grade canvas vision. It has never published a paper and never will.</p></article>
+      <aside><article class="result-card"><p class="eyebrow">02 / ANALYSIS RESULT</p><h2>🫧 Bubble Count</h2><div class="count" id="bubbleCount" aria-live="polite">—</div><p class="verdict" id="verdict">Awaiting an unnecessarily close look.</p><div class="result-grid"><div><small>ACTIVITY</small><b id="activity">—</b></div><div><small>BUBBLE SCORE</small><b id="score">—</b></div><div><small>SCIENTIFIC VALUE</small><b>0%</b></div><div><small>USEFULNESS</small><b>Questionable</b></div></div></article><article class="meter-card"><p class="eyebrow">SYSTEM DIAGNOSTIC</p><div class="meter-title"><h2>Uselessness Meter</h2><strong>99.9%</strong></div><div class="meter" role="progressbar" aria-label="Uselessness level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="99.9"><i></i></div><p>Congratulations. You used camera vision to count tea bubbles.</p></article></aside>
+    </section>
+    <section class="history"><div class="history-head"><div><p class="eyebrow">03 / ARCHIVE</p><h2>Your Bubble History</h2></div><button class="clear" id="clearHistory">Clear history</button></div><div class="stat-grid"><div><span aria-hidden="true">🫧</span><b id="totalScans">0</b><small>Scans</small></div><div><span aria-hidden="true">☕</span><b id="averageBubbles">0</b><small>Average bubbles</small></div><div><span aria-hidden="true">🏆</span><b id="highestBubbles">0</b><small>Maximum bubbles</small></div></div><div class="history-list" id="historyList" aria-live="polite"><p>No scans yet. Your bubble legacy starts here.</p></div></section>
+  </main>
+  <footer>Tea Bubble Counter © 2026 <span>“Making unnecessary technology unnecessarily advanced.” ☕🫧</span></footer>
+  <script src="script.js"></script>
+</body></html>
