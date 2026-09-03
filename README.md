@@ -26,7 +26,7 @@ cd "C:\Users\Admin\OneDrive\Desktop\project 1\useless_project_temp"
 python -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in a current desktop or mobile browser. Choose **Start Camera**, grant permission, point it at the surface of a drink, then choose **Scan / Count Bubbles**.
+Then visitfile:///C:/Users/Admin/OneDrive/Desktop/project%201/useless_project_temp/index.html in a current desktop or mobile browser. Choose **Start Camera**, grant permission, point it at the surface of a drink, then choose **Scan / Count Bubbles**.
 
 If Python is unavailable, use any static-file server that serves this folder on `localhost`. For a deployed copy, use HTTPS; browsers block camera access on ordinary HTTP pages other than localhost.
 
