@@ -51,6 +51,9 @@ script.js   Camera lifecycle, Canvas detection, overlay, and local history
 
 Camera access is requested only when **Start Camera** is pressed. Frames are processed in the current browser tab and are never uploaded. Scan results (drink type, count, score, and timestamp) are saved only in that browser's `localStorage`; **Clear history** removes them.
 
+## GitHub repository link
+
+
 ## Limitations
 
 This is a light-hearted visual approximation, so results vary with lighting, drink colour, camera focus, cup shape, and whether the universe wants to be counted today. Use it for bragging rights, not beverage science.
